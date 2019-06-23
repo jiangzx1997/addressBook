@@ -6,3 +6,4 @@
 3.各部分具体要求见课程群pdf；
 
 4.周二晚上十点交流工作进展，周三晚十二点完成初版程序。
+![App交互流程](https://github.com/jiangzx1997/addressBook/blob/master/architecture.png)
