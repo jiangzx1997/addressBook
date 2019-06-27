@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CallLogDetail">
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/name1"
+        android:textSize="30dp"
+        android:text="姓名："
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:textSize="30dp"
+        android:text="name"
+        android:layout_toRightOf="@id/number1"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/number1"
+        android:textSize="30dp"
+        android:text="电话号码："
+        android:layout_below="@id/name1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/number"
+        android:textSize="30dp"
+        android:text="number"
+        android:layout_below="@id/name1"
+        android:layout_toRightOf="@id/number1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/type1"
+        android:textSize="30dp"
+        android:text="类型:"
+        android:layout_below="@id/number1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/type"
+        android:textSize="30dp"
+        android:text="type"
+        android:layout_toRightOf="@id/type1"
+        android:layout_below="@id/number1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/date1"
+        android:textSize="30dp"
+        android:text="日期："
+        android:layout_below="@id/type1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:textSize="30dp"
+        android:text="date"
+        android:layout_toRightOf="@id/date1"
+        android:layout_below="@id/type1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/time1"
+        android:textSize="30dp"
+        android:text="通话时间："
+        android:layout_below="@id/date1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        android:textSize="30dp"
+        android:text="time"
+        android:layout_toRightOf="@id/time1"
+        android:layout_below="@id/date1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/location1"
+        android:textSize="30dp"
+        android:text="归属地："
+        android:layout_below="@id/time1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/location"
+        android:textSize="30dp"
+        android:text="location"
+        android:layout_toRightOf="@id/location1"
+        android:layout_below="@id/time1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete"
+        android:text="删除通话记录"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/colorRed"
+        android:textColor="@color/colorBlue"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

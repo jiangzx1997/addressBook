@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/call_number"
+        android:title="拨打电话号码"/>
+    <item android:id="@+id/copy_number"
+        android:title="复制电话号码"/>
+    <item android:id="@+id/delete_number"
+        android:title="删除通话记录"/>
+
+</menu>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.calllog">
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/call_log_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/CallLogTheme">
+        <activity android:name=".CallLog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CallLogDetail"
+            android:label="@string/call_log_detail_name"
+            android:theme="@style/CallLogDetailTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN1" />
+                <category android:name="android.intent.category.LAUNCHER1" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
