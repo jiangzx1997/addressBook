@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AddressBook</string>
+    <string name="app_name">addressBook</string>
+    <string name="call_log_name">CallLog</string>
+    <string name="call_log_detail_name">CallLogDetail</string>
 </resources>
