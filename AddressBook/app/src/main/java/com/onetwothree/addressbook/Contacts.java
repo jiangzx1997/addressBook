@@ -1,10 +1,6 @@
-package com.onetwothree.addressbook;
-
-import android.provider.ContactsContract;
+package com.example.calllog;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by liyang21 on 2019/6/24.
@@ -24,7 +20,7 @@ public class Contacts {
         this.Numbers = new ArrayList<PhoneNumber>();
     }
 
-    public ArrayList <PhoneNumber> getNumbers() {
+    public ArrayList<PhoneNumber> getNumbers() {
         return this.Numbers;
     }
     public String getName() {

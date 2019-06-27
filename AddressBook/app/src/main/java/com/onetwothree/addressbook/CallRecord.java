@@ -1,4 +1,4 @@
-package com.onetwothree.addressbook;
+package com.example.calllog;
 
 import android.provider.CallLog;
 
@@ -12,7 +12,7 @@ public class CallRecord {
 
     private String Name;
     private String Number; // (TODO) change this to PhoneNumber
-    private Date Date;
+    private java.util.Date Date;
     private long Time;
     private int type;
     private String Location; //(TODO)
@@ -28,12 +28,13 @@ public class CallRecord {
     public long getTime() {
         return this.Time;
     }
-    public Date getDate() {
+    public java.util.Date getDate() {
         return this.Date;
     }
     public String getLocation() {
         return this.Location;
     }
+    public String getType(){return this.changeType(type);}
 
     public void setName(String Name) {
         if (Name != null) {
@@ -52,7 +53,7 @@ public class CallRecord {
         this.Location = Location;
     }
 
-    private String getType(int type) {
+    private String changeType(int type) {
         switch (type) {
             case CallLog.Calls.INCOMING_TYPE:
                 return "呼入";
@@ -71,7 +72,7 @@ public class CallRecord {
         String Info = new String();
         Info = Info + "号码：" + Number + "\n"
                 + "姓名：" + Name + "\n"
-                + "类型：" + getType(type) + "\n"
+                + "类型：" + changeType(type) + "\n"
                 + "日期：" + utils.formatDate(Date.getTime()) + "\n"
                 + "时间：" + utils.formatDuration(Time) + "\n"
                 + "地址：" + Location + "\n\n";

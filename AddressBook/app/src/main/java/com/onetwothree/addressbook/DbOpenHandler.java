@@ -1,4 +1,4 @@
-package com.onetwothree.addressbook;
+package com.example.calllog;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +9,7 @@ import android.util.Log;
  * Created by liyang21 on 2019/5/26.
  */
 
-public class DbOpenHandler extends SQLiteOpenHelper{
+public class DbOpenHandler extends SQLiteOpenHelper {
 
     private final String TAG = "MySQLiteOpenHelper";
 

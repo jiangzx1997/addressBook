@@ -1,4 +1,4 @@
-package com.onetwothree.addressbook;
+package com.example.calllog;
 
 import java.util.Date;
 

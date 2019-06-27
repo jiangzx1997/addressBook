@@ -1,4 +1,4 @@
-package com.onetwothree.addressbook;
+package com.example.calllog;
 
 import android.util.Log;
 
@@ -41,6 +41,10 @@ public class utils {
     }
 
     static public String PhoneNumberDeformat(String Number) {
+        if (Number == null)
+        {
+            return "";
+        }
         String result = new String();
         for (int i = 0; i < Number.length(); ++ i) {
             char ch = Number.charAt(i);

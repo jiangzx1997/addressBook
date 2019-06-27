@@ -1,15 +1,13 @@
-package com.onetwothree.addressbook;
+package com.example.calllog;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Date;
-import java.util.StringTokenizer;
 
 /**
  * Created by liyang21 on 2019/6/26.
@@ -54,7 +52,7 @@ public class Dbutil {
         }
 
         // 2. 添加电话号码到 PhoneNumber
-        ArrayList <PhoneNumber> numbers = contact.getNumbers();
+        ArrayList<PhoneNumber> numbers = contact.getNumbers();
         for (int i = 0; i < numbers.size(); ++ i) {
             String number = numbers.get(i).getNumber();
             String type = numbers.get(i).getType().getName();
