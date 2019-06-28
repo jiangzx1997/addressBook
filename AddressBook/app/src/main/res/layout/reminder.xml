@@ -82,7 +82,7 @@
                         android:tint="#000000"
                         android:contentDescription="@string/app_name"
                         android:scaleType="centerInside"
-                        android:src="@mipmap/menu_action_calendar_mvp" />
+                        android:src="@drawable/menu_action_calendar_mvp" />
 
                     <TextView
                         android:id="@+id/tv_current_day"
@@ -153,7 +153,7 @@
             </com.haibin.calendarview.CalendarLayout>
 
         </LinearLayout>
-        <android.support.design.widget.FloatingActionButton
+        <!--<android.support.design.widget.FloatingActionButton
             android:id="@+id/add_metting"
             app:backgroundTint="#259b24"
             android:layout_width="wrap_content"
@@ -161,7 +161,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
             app:elevation="8dp"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/ic_launcher"/>-->
     </android.support.design.widget.CoordinatorLayout>
 
 </LinearLayout>
