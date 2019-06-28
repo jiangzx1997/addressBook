@@ -1,4 +1,4 @@
-package com.example.calllog;
+package com.onetwothree.addressbook;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

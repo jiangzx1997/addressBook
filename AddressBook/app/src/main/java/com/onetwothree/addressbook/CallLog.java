@@ -1,4 +1,4 @@
-package com.example.calllog;
+package com.onetwothree.addressbook;
 
 import android.Manifest;
 import android.app.Activity;
@@ -103,9 +103,7 @@ public class CallLog extends AppCompatActivity {
         call_fre1 = (TextView) findViewById(R.id.call_frequent1);
         call_time1 = (TextView) findViewById(R.id.call_time1);
         //通话记录数据库
-        helper = new DbOpenHandler(this, "AddressBook.db", null, 1);
-        callRecord = new CallRecordUtil(this, this);
-        dbutil = new Dbutil(helper, callRecord);
+        dbutil = Dbutil.getInstance();
         //获取所有通话记录
         records = dbutil.getAllCallRecord();
         index_records = new ArrayList<Integer>();
@@ -215,7 +213,7 @@ public class CallLog extends AppCompatActivity {
             Intent intent = new Intent(parent.getContext(), CallLogDetail.class);
             intent.putExtra("name", records.get(position).getName());
             intent.putExtra("number", utils.PhoneNumberDeformat(records.get(position).getNumber()));
-            intent.putExtra("type", records.get(position).getType());
+            intent.putExtra("type", records.get(position).getShowType());
             intent.putExtra("date", utils.formatDate(records.get(position).getDate().getTime()));
             intent.putExtra("time", utils.formatDuration(records.get(position).getTime()));
             //intent.putExtra("location", records.get(position).getLocation());

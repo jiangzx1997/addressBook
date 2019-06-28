@@ -1,8 +1,9 @@
-package com.example.calllog;
+package com.onetwothree.addressbook;
 
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -11,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by liyang21 on 2019/6/24.
@@ -97,5 +99,49 @@ public class CallRecordUtil {
             Log.d(TAG, "deleted fail:" + String.valueOf(date));
         }
     }
+
+    // 插入一条伪造的通讯记录
+    public void insertCallLog(CallRecord callRecord) {
+        ContentResolver resolver = context.getContentResolver();
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this.activity, new String[]{Manifest.permission.READ_CALL_LOG}, 100);
+            Log.v(TAG, "No permission");
+            return;
+        }
+        ContentValues values = new ContentValues();
+        values.put(CallLog.Calls.CACHED_NAME, callRecord.getName());
+        values.put(CallLog.Calls.NUMBER, callRecord.getNumber());
+        values.put(CallLog.Calls.DATE, callRecord.getDate().getTime() );
+        values.put(CallLog.Calls.DURATION, callRecord.getTime());
+        values.put(CallLog.Calls.TYPE, callRecord.getType());
+        values.put(CallLog.Calls.NEW, Boolean.TRUE);
+
+        Log.v(TAG, "insert record");
+
+        resolver.insert(CallLog.Calls.CONTENT_URI, values);
+    }
+
+    public void clear() {
+        ArrayList<CallRecord> records = new ArrayList<CallRecord>();
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this.activity, new String[]{Manifest.permission.READ_CALL_LOG}, 100);
+            return;
+        }
+        Cursor cursor = context.getContentResolver().query(CallLog.Calls.CONTENT_URI,
+                new String[]{CallLog.Calls.DATE}, null, null, "date DESC");
+        if (cursor != null) {
+            try {
+                while (cursor.moveToNext()) {
+                    Long date = cursor.getLong(0);
+                    deleteCallLog(date);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                cursor.close();
+            }
+        }
+    }
+
 
 }

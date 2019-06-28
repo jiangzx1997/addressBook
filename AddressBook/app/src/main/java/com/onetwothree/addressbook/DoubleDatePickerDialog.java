@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.calllog;
+package com.onetwothree.addressbook;
 
 import java.lang.reflect.Field;
 
@@ -28,7 +28,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
 
-import com.example.calllog.R;
+import com.onetwothree.addressbook.R;
 
 /**
  * A simple dialog containing an {@link android.widget.DatePicker}.

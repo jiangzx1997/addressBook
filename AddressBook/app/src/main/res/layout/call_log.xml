@@ -13,13 +13,6 @@
         android:gravity="center_horizontal"
         android:inputType="number" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/call_log_listview"
-        android:layout_below="@id/number_input"
-        android:layout_above="@id/date"/>
-
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
@@ -30,6 +23,13 @@
         android:gravity="center_horizontal"
         android:visibility="gone"
         android:text="日期"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/call_log_listview"
+        android:layout_below="@id/number_input"
+        android:layout_above="@id/date"/>
 
     <TextView
         android:id="@+id/call_frequent1"

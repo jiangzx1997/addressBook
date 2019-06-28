@@ -1,4 +1,4 @@
-package com.example.calllog;
+package com.onetwothree.addressbook;
 
 import android.util.Log;
 
