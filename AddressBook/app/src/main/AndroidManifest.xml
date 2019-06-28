@@ -46,6 +46,14 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Reminder">
+            <intent-filter>
+                <action android:name="android.intent.action.Reminder" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 
