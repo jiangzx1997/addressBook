@@ -155,6 +155,7 @@ public class CallLog extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 Toast.makeText(this, "返回上一级界面", Toast.LENGTH_SHORT).show();
+                this.finish();
                 break;
             case R.id.menu1:
                 Toast.makeText(this, "根据日期筛选", Toast.LENGTH_SHORT).show();

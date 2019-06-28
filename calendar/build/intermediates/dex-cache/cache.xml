@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_d74bd2ce829e1bf8ef6e4ce139910bc589cbae4f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_b5227e4cc30b393166f70ba293aaecc3bb8ea496\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="28a20ee47a9ea8039d7300706b91a28e352be601">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5d719a6ab8c0e73f5ef2aaec2e8f11d958134f56\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.haibin\calendarview\3.3.9\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3d40d831178a9671c79b036078b7524258d37f48">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.haibin-calendarview-3.3.9_85730f8a7067f0b5d691082ccde5cc01e3e02a7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_4830b3b50ee013ed9cb05c8cae2e2318e4a24a44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1f1c7067e22acf05bddbca9f94422050cd848a86">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.0.0-alpha1_da89eda1aeacdc29acd8dc2138081255905b7229\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_f594cc3030ac02670a12829cd0cf15b53a61dc3e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f1428fd9d5f3cf9f9bdc04bee0cdddef13ccb5ec">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9d87ab122776b393dad42c4cc6dd1a4c1f8c77dc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_8b81e211a47d4a1d26b5b6f7219294d10c326707\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_6ef81e9a312146e487d74e6af4970ffdcf2365f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_e2a126b9f0aa46d254ecb6d619a802e2c73f2c2e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_c7390fe4ba7b3a40010d77160f48f6b98bc28321\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_e878d7c65edc59e62ce8ffa6842b73099aa6ad40\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_0961b4090e2cbb46662569c95d28db2961fdb6ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_ec562875eaa731deb6c1f4ecf5f235d428654207\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_55d908b4ad0375cbecb35288823423a720e402e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b797dbfa84163a3cc93030c9fadcaded9c7dd362\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_87c6c4a70e054896f928109e22e313a79e8b70e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_24bcc471464307d6e82130a49a3a3bf30c1a99b6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android_Project\addressBook\calendar\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="cd688796dadc28f7f95db229cbfdaf91ebbb0d61">
+        <dex dex="E:\Android_Project\addressBook\calendar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.0.0-alpha1_c452f529dbfa46917e20574fa6c0c0154ab7b291\classes.dex" />
+    </item>
+
+</items>

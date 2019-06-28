@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.telecom.Call;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class activity_main extends AppCompatActivity {
     private CallRecordUtil callRecord;
     private DbOpenHandler helper;
     private Dbutil dbutil;
+    private ActionBar actionBar;
 
     static private int permissions_code = 100;
     static private String[] permissions = {Manifest.permission.READ_CALL_LOG, Manifest.permission.WRITE_CALL_LOG, Manifest.permission.CALL_PHONE};
@@ -33,7 +35,6 @@ public class activity_main extends AppCompatActivity {
     private void PrepareTestData() {
 
         dbutil.ClearDb();
-
         PhoneNumber phoneNumber;
         Contacts contacts;
         CallRecord callRecord;
@@ -72,6 +73,7 @@ public class activity_main extends AppCompatActivity {
         callRecord.setTime(100);
         callRecord.setType(CallLog.Calls.INCOMING_TYPE);
         dbutil.AddCallRecord(callRecord);
+
 
     }
 
@@ -146,6 +148,10 @@ public class activity_main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("权限获取");
+
         helper = new DbOpenHandler(this, "AddressBook.db", null, 1);
         callRecord = new CallRecordUtil(this, this);
 
@@ -166,11 +172,9 @@ public class activity_main extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         PrepareTestData();
-        showAllCallRecord();
+        //showAllCallRecord();
 
-        Intent intent = new Intent();
-        intent.setAction("com.onetwothree.addressbook.CallLog");
+        Intent intent = new Intent(activity_main.this, WelcomePage.class);
         startActivity(intent);
-
     }
 }

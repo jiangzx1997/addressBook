@@ -20,7 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".WelcomePage">
+            <intent-filter>
+                <action android:name="com.onetwothree.addressbook.WelcomePage" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".CallLog">
             <intent-filter>
                 <action android:name="com.onetwothree.addressbook.CallLog" />
