@@ -1,4 +1,4 @@
-package com.example.calllog;
+package com.onetwothree.addressbook;
 
 import android.provider.CallLog;
 
@@ -34,7 +34,8 @@ public class CallRecord {
     public String getLocation() {
         return this.Location;
     }
-    public String getType(){return this.changeType(type);}
+    public String getShowType(){ return changeType(this.type); }
+    public int getType() { return this.type; }
 
     public void setName(String Name) {
         if (Name != null) {

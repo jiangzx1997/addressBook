@@ -1,4 +1,4 @@
-package com.example.calllog;
+package com.onetwothree.addressbook;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,15 +18,26 @@ public class Dbutil {
     private final String TAG = "DbUtil";
     DbOpenHandler helper;
     CallRecordUtil callRecordUtil;
+    static Dbutil instance;
 
-    public Dbutil(DbOpenHandler helper, CallRecordUtil callRecordUtil) {
+    private Dbutil(DbOpenHandler helper, CallRecordUtil callRecordUtil) {
         this.helper = helper;
         this.callRecordUtil = callRecordUtil;
+    }
+
+    static public void init(DbOpenHandler helper, CallRecordUtil callRecordUtil) {
+        instance = new Dbutil(helper, callRecordUtil);
+    }
+
+    static Dbutil getInstance() {
+        return instance;
     }
 
     public void DeleteCallRecord(Long date) {
         callRecordUtil.deleteCallLog(date);
     }
+
+    public void AddCallRecord(CallRecord callRecord) { callRecordUtil.insertCallLog(callRecord); }
 
     public void ClearDb() {
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -34,6 +45,7 @@ public class Dbutil {
         db.execSQL("delete from PhoneNumber");
         db.execSQL("delete from Contact");
         db.execSQL("delete from Remind");
+        callRecordUtil.clear();
         db.close();
     }
 

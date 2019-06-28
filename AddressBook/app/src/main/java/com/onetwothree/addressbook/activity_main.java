@@ -1,9 +1,16 @@
 package com.onetwothree.addressbook;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.telecom.Call;
 import android.util.Log;
+import android.provider.CallLog;
 
 import java.security.cert.PolicyNode;
 import java.util.ArrayList;
@@ -19,13 +26,17 @@ public class activity_main extends AppCompatActivity {
     private DbOpenHandler helper;
     private Dbutil dbutil;
 
+    static private int permissions_code = 100;
+    static private String[] permissions = {Manifest.permission.READ_CALL_LOG, Manifest.permission.WRITE_CALL_LOG, Manifest.permission.CALL_PHONE};
 
-    private void addDebugData() {
+
+    private void PrepareTestData() {
 
         dbutil.ClearDb();
 
         PhoneNumber phoneNumber;
         Contacts contacts;
+        CallRecord callRecord;
 
         contacts = new Contacts();
         contacts.setName("Liyang");
@@ -53,6 +64,15 @@ public class activity_main extends AppCompatActivity {
         phoneNumber.setType(PhoneNumber.PhoneType.Unknow);
         contacts.addNumber(phoneNumber);
         dbutil.addContact(contacts);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2018, 4, 25, 10, 45, 22).getTime());
+        callRecord.setNumber("123456789");
+        callRecord.setName("Liyang");
+        callRecord.setTime(100);
+        callRecord.setType(CallLog.Calls.INCOMING_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
     }
 
     void showAllContacts() {
@@ -82,7 +102,7 @@ public class activity_main extends AppCompatActivity {
 //        CallRecord callRecord = records.get(0);
 //        dbutil.DeleteCallRecord(callRecord.getDate().getTime());
 //        showAllCallRecord();
-        addDebugData();
+        PrepareTestData();
         showAllContacts();
         Log.v(TAG, "now add a PhoneNumber for the first contact");
         ArrayList<Contacts> contacts = dbutil.getAllContacts();
@@ -128,10 +148,29 @@ public class activity_main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         helper = new DbOpenHandler(this, "AddressBook.db", null, 1);
         callRecord = new CallRecordUtil(this, this);
-        dbutil = new Dbutil(helper, callRecord);
+
+        Dbutil.init(helper, callRecord);
+        dbutil = Dbutil.getInstance();
 
         // for debug dbutil.
-         debugTest();
+//         debugTest();
+
+        Log.v(TAG, "request Permissions");
+        ActivityCompat.requestPermissions(this, permissions, permissions_code);
+//        showAllCallRecord();
+        Log.v(TAG, "now come here");
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        PrepareTestData();
+        showAllCallRecord();
+
+        Intent intent = new Intent();
+        intent.setAction("com.onetwothree.addressbook.CallLog");
+        startActivity(intent);
+
+    }
 }
