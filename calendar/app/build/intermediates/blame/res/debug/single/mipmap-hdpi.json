@@ -1,10 +1,18 @@
 [
     {
+        "merged": "F:\\Github\\addressBook\\calendar\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\menu_action_calendar_mvp.png",
+        "source": "F:\\Github\\addressBook\\calendar\\app\\src\\main\\res\\mipmap-hdpi\\menu_action_calendar_mvp.png"
+    },
+    {
         "merged": "E:\\Android_Project\\addressBook\\calendar\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\menu_action_calendar_mvp.png",
         "source": "E:\\Android_Project\\addressBook\\calendar\\app\\src\\main\\res\\mipmap-hdpi\\menu_action_calendar_mvp.png"
     },
     {
         "merged": "E:\\Android_Project\\addressBook\\calendar\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "E:\\Android_Project\\addressBook\\calendar\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\Github\\addressBook\\calendar\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "F:\\Github\\addressBook\\calendar\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     }
 ]

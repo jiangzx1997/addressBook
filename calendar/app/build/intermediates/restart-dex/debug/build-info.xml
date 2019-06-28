@@ -5,9 +5,9 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="69433862307616"
+    timestamp="75601241143448"
     token="5847969611681989214"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
@@ -22,16 +22,15 @@
         name="verifier"
         duration="0" />
 
-    <artifact
-        location="E:\Android_Project\addressBook\calendar\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
-
     <build
-        timestamp="69433862307616"
+        timestamp="75534674965922"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="E:\Android_Project\addressBook\calendar\app\build\outputs\apk\app-debug.apk"
+            location="F:\Github\addressBook\calendar\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
+    <build
+        timestamp="75601241143448"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

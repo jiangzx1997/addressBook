@@ -1,7 +1,7 @@
-#Fri Jun 28 12:40:33 CST 2019
-base.0=E\:\\Android_Project\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5d719a6ab8c0e73f5ef2aaec2e8f11d958134f56
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=E\:\\Android_Project\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9d87ab122776b393dad42c4cc6dd1a4c1f8c77dc\\classes.dex
-base.1=E\:\\Android_Project\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9d87ab122776b393dad42c4cc6dd1a4c1f8c77dc
-file.0=E\:\\Android_Project\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5d719a6ab8c0e73f5ef2aaec2e8f11d958134f56\\classes.dex
+#Fri Jun 28 14:35:06 CST 2019
+base.0=F\:\\Github\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_a1597d66865b81d9aa9048a0f47f973e11fc8ad5
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=F\:\\Github\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_3e7395dd93c194aad5f45996a739c6889fc2a22f\\classes.dex
+base.1=F\:\\Github\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_3e7395dd93c194aad5f45996a739c6889fc2a22f
+file.0=F\:\\Github\\addressBook\\calendar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_a1597d66865b81d9aa9048a0f47f973e11fc8ad5\\classes.dex
