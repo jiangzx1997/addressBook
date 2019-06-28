@@ -23,15 +23,9 @@
 
         <activity android:name=".CallLog">
             <intent-filter>
-<<<<<<< Updated upstream
                 <action android:name="com.onetwothree.addressbook.CallLog" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-=======
-                <action android:name="android.intent.action.MAIN1" />
-
-                <category android:name="android.intent.category.LAUNCHER1" />
->>>>>>> Stashed changes
             </intent-filter>
         </activity>
 
@@ -40,13 +34,9 @@
             android:label="@string/call_log_detail_name"
             android:theme="@style/CallLogDetailTheme">
             <intent-filter>
-<<<<<<< Updated upstream
                 <action android:name="com.onetwothree.addressbook.CallLogDetail" />
                 <category android:name="android.intent.category.DEFAULT" />
-=======
-                <action android:name="android.intent.action.MAIN2" />
-                <category android:name="android.intent.category.LAUNCHER2" />
->>>>>>> Stashed changes
+
             </intent-filter>
         </activity>
 
