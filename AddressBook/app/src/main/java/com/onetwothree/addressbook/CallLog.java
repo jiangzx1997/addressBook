@@ -192,11 +192,13 @@ public class CallLog extends AppCompatActivity {
             map.put("phone_number", utils.PhoneNumberDeformat(records.get(index).getNumber()));
             //map.put("phone_number",records.get(index).getNumber());
             map.put("date", utils.formatDate(records.get(index).getDate().getTime()));
+            map.put("name", records.get(index).getName());
+            map.put("type", records.get(index).getShowType());
             list.add(map);
         }
         adapter = new SimpleAdapter(this, list,
-                R.layout.call_log_list_item, new String[]{"phone_number", "date"},
-                new int[]{R.id.phone_number, R.id.date});
+                R.layout.call_log_list_item, new String[]{"phone_number", "date", "name", "type"},
+                new int[]{R.id.phone_number, R.id.date, R.id.name, R.id.type});
 
         call_log_listView.setAdapter(adapter);
         call_log_listView.setOnItemClickListener(new itemClick());
@@ -204,6 +206,7 @@ public class CallLog extends AppCompatActivity {
         //计算通话数及通话时长总和
         count_time_fre();
     }
+
 
     //短触事件
     class itemClick implements AdapterView.OnItemClickListener {

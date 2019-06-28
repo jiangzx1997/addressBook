@@ -23,4 +23,26 @@
         android:text="time"
         />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:id="@+id/name"
+        android:textSize="15dp"
+        android:textColor="@color/colorBlue"
+        android:text="name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/type"
+        android:textSize="20dp"
+        android:textColor="@color/colorRed"
+        android:text="type"/>
+
 </RelativeLayout>

@@ -73,6 +73,14 @@ public class activity_main extends AppCompatActivity {
         callRecord.setType(CallLog.Calls.INCOMING_TYPE);
         dbutil.AddCallRecord(callRecord);
 
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 4, 25, 10, 45, 22).getTime());
+        callRecord.setNumber("123456789");
+        callRecord.setName("Liyang");
+        callRecord.setTime(100);
+        callRecord.setType(CallLog.Calls.OUTGOING_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
     }
 
     void showAllContacts() {
