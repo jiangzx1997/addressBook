@@ -38,7 +38,7 @@ public class LetterIndexView extends LinearLayout {
      */
     public void init(OnTouchLetterIndex touchLetterIndex) {
         this.touchLetterIndex = touchLetterIndex;
-        this.setBackgroundColor(getResources().getColor(R.color.transparent));
+        this.setBackgroundColor(getResources().getColor(R.color.colorBlack));
         this.setOrientation(LinearLayout.VERTICAL);
         this.setGravity(Gravity.CENTER);
         //创建字母控件实例
@@ -95,7 +95,7 @@ public class LetterIndexView extends LinearLayout {
 						}
                         break;
                     case MotionEvent.ACTION_UP:
-                        LetterIndexView.this.setBackgroundColor(getResources().getColor(R.color.transparent));
+                        LetterIndexView.this.setBackgroundColor(getResources().getColor(R.color.colorBlack));
                         if (LetterIndexView.this.touchLetterIndex!=null) {
                         	//调用接口
                         	LetterIndexView.this.touchLetterIndex.touchFinish();

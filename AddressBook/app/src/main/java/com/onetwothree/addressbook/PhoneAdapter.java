@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.window10.addressbook1.PinnedSectionListView.PinnedSectionListAdapter;
+import com.onetwothree.addressbook.PinnedSectionListView.PinnedSectionListAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,14 +58,14 @@ public class PhoneAdapter extends BaseAdapter implements PinnedSectionListAdapte
     //实现自定义listview的接口
     @Override
     public boolean isItemViewTypePinned(int viewType) {
-        return viewType == MainActivity.TITLE;
+        return viewType == ContactActivity.TITLE;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         final ViewHolder viewHolder;
         switch (getItemViewType(i)) {
-            case MainActivity.ITEM:
+            case ContactActivity.ITEM:
                 if (view == null) {
                     viewHolder = new ViewHolder();
                     view = layoutInflater.inflate(R.layout.item_phone_item, null);
@@ -78,7 +78,7 @@ public class PhoneAdapter extends BaseAdapter implements PinnedSectionListAdapte
                 //设置名字
                 viewHolder.txt.setText(list.get(i).getName());
                 break;
-            case MainActivity.TITLE:
+            case ContactActivity.TITLE:
                 if (view == null) {
                     viewHolder = new ViewHolder();
                     view = layoutInflater.inflate(R.layout.item_phone_title, null);

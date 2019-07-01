@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/edit_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/text_field"
+        android:drawableLeft="@mipmap/edit_search"
+        android:drawablePadding="10dp"
+        android:hint="请输入名字的拼音"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="#ff333333"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edit_search"
+        android:background="@android:color/white" >
+
+        <com.example.window10.addressbook1.PinnedSectionListView
+            android:id="@+id/phone_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null" />
+
+        <com.example.window10.addressbook1.LetterIndexView
+            android:id="@+id/phone_LetterIndexView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/phone_txt_center"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="#30000000"
+        android:gravity="center"
+        android:textColor="#ff7c7c7c"
+        android:visibility="gone" />
+
+</RelativeLayout>

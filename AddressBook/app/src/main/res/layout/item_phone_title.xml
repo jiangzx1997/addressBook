@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_phone_txt_head"
+    android:drawableLeft="@mipmap/head_default"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffbebdbc"
+    android:drawablePadding="10dp"
+    android:textSize="25sp"
+    android:text="G"
+    android:textColor="#ff7c7c7c" />

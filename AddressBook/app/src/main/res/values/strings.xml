@@ -2,4 +2,80 @@
     <string name="app_name">addressBook</string>
     <string name="call_log_name">CallLog</string>
     <string name="call_log_detail_name">CallLogDetail</string>
+    <string-array name="phone_all">
+    <item>凌应标"\n"156333455</item>
+    <item>罗俊"\n"563343455</item>
+    <item>乔帮主"\n"1256343455</item>
+    <item >李志源"\n"563343455</item>
+    <item >金柏汇"\n"45343455</item>
+    <item >陈坤"\n"453343455</item>
+    <item >赵薇"\n"43343455</item>
+    <item >范冰冰"\n"45343455</item>
+    <item >李晨"\n"89343455</item>
+    <item >撒盐哥"\n"43423343455</item>
+    <item >阿拉斯加"\n"1433343455</item>
+    <item >哥斯拉"\n"45423343455</item>
+    <item >张震岳"\n"1443343455</item>
+    <item >张学友"\n"14343343455</item>
+    <item >郭富城"\n"123343455</item>
+    <item >周杰伦"\n"123343455</item>
+    <item >爱德华"\n"123343455</item>
+    <item >阿萨德"\n"123343455</item>
+    <item >陈冠希"\n"123343455</item>
+    <item >奥特曼"\n"123343455</item>
+    <item >中岛美雪"\n"123343455</item>
+    <item >林志玲"\n"123343455</item>
+    <item >林志颖"\n"123343455</item>
+    <item >李克勤"\n"123343455</item>
+    <item >泰森"\n"123343455</item>
+    <item >杰克"\n"123343455</item>
+    <item >汤姆"\n"123343455</item>
+    <item >阿汤哥"\n"123343455</item>
+    <item >艾弗森"\n"123343455</item>
+    <item >乔丹"\n"123343455</item>
+    <item >铁科比"\n"123343455</item>
+    <item >麦迪"\n"123343455</item>
+    <item >雷阿伦"\n"123343455</item>
+    <item >米勒"\n"123343455</item>
+    <item >汤姆森"\n"123343455</item>
+    <item >詹姆斯"\n"123343455</item>
+    <item >格里芬"\n"123343455</item>
+    <item >保罗"\n"123343455</item>
+    <item >洛维斯基"\n"123343455</item>
+    <item >加索尔"\n"123343455</item>
+    <item >林书豪"\n"123343455</item>
+    <item >尼克扬"\n"123343455</item>
+    <item >大胡子"\n"123343455</item>
+    <item >杜兰特"\n"123343455</item>
+    <item >威少"\n"123343455</item>
+    <item >韦德"\n"123343455</item>
+    <item >拉塞尔"\n"123343455</item>
+    <item >克拉克森"\n"123343455</item>
+    <item >库里"\n"123343455</item>
+    <item >姚明"\n"123343455</item>
+    <item >易建联"\n"123343455</item>
+    <item >刘炜"\n"123343455</item>
+    <item >朱芳雨"\n"123343455</item>
+    <item >孙悦"\n"123343455</item>
+    <item >邓肯"\n"123343455</item>
+    <item >吉诺比利"\n"123343455</item>
+    <item >帕克"\n"123343455</item>
+    <item >张伯伦"\n"123343455</item>
+    <item >约翰逊"\n"123343455</item>
+    <item >罗斯"\n"123343455</item>
+    <item >乔治"\n"123343455</item>
+    <item >雷迪克"\n"123343455</item>
+    <item >路易斯"\n"123343455</item>
+    <item >乐福"\n"123343455</item>
+    <item >欧文"\n"123343455</item>
+    <item >加内特"\n"123343455</item>
+    <item >皮尔斯"\n"123343455</item>
+    <item >浓眉哥"\n"123343455</item>
+    <item >唐斯"\n"123343455</item>
+    <item >小乔丹"\n"123343455</item>
+    <item >霍华德"\n"123343455</item>
+    <item >波什"\n"123343455</item>
+    <item >安东尼"\n"123343455</item>
+    <item >德隆"\n"123343455</item>
+    </string-array>
 </resources>
