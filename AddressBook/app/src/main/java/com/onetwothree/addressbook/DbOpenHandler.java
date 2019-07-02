@@ -22,7 +22,7 @@ public class DbOpenHandler extends SQLiteOpenHelper {
         Log.d(TAG, "onCreate");
         db.execSQL("CREATE TABLE PhoneNumber(_id integer primary key autoincrement, number varchar(20), type varchar(20))");
         Log.d(TAG, "Create table PhoneNumber");
-        db.execSQL("CREATE TABLE Contact(_id integer primary key autoincrement, name varchar(20))");
+        db.execSQL("CREATE TABLE Contact(_id integer primary key autoincrement, name varchar(20), email varchar(20), birthday DATE)");
         Log.d(TAG, "Create table Contact");
         db.execSQL("CREATE TABLE Phone_Contact(phone_id integer, contact_id integer, PRIMARY KEY (phone_id, contact_id))");
         Log.d(TAG, "Create table Phone_Contact");

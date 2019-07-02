@@ -33,6 +33,13 @@ public class Dbutil {
         return instance;
     }
 
+    public void DropTable() {
+        SQLiteDatabase db = helper.getWritableDatabase();
+        db.execSQL("drop table Contact");
+        db.execSQL("CREATE TABLE Contact(_id integer primary key autoincrement, name varchar(20), email varchar(20), birthday DATE)");
+        db.close();
+    }
+
     public void DeleteCallRecord(Long date) {
         callRecordUtil.deleteCallLog(date);
     }
@@ -55,7 +62,8 @@ public class Dbutil {
         Cursor cursor;
 
         // 1. 添加联系人到 Contact
-        db.execSQL("insert into Contact(name) values(?)", new String[]{contact.getName()});
+        db.execSQL("insert into Contact(name, email, birthday) values(?,?,?)",
+                new String[]{contact.getName(), contact.getEmail(), String.valueOf(contact.getBirthday().getTime())});
         cursor = db.rawQuery("select last_insert_rowid() from Contact", null);
         int contact_id = -1;
         if (cursor.moveToFirst()) {
@@ -134,9 +142,13 @@ public class Dbutil {
         while (cursor.moveToNext()) {
             int id = cursor.getInt(cursor.getColumnIndex("_id"));
             String name = cursor.getString(cursor.getColumnIndex("name"));
+            String email = cursor.getString(cursor.getColumnIndex("email"));
+            Long birthday = cursor.getLong(cursor.getColumnIndex("birthday"));
             Contacts contact = new Contacts();
             contact.setName(name);
             contact.set_id(id);
+            contact.setEmail(email);
+            contact.setBirthday(birthday);
             contact_map.put(id, contact);
         }
 

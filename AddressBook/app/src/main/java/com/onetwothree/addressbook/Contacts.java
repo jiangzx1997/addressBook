@@ -1,6 +1,7 @@
 package com.onetwothree.addressbook;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by liyang21 on 2019/6/24.
@@ -10,6 +11,8 @@ public class Contacts {
 
     private int _id;
     private String Name;
+    private String email;
+    private Date birthday;
     ArrayList<PhoneNumber> Numbers;
 
     Contacts () {
@@ -20,6 +23,8 @@ public class Contacts {
         this.Numbers = new ArrayList<PhoneNumber>();
     }
 
+    public String getEmail() { return this.email; }
+    public Date getBirthday() { return this.birthday; }
     public ArrayList<PhoneNumber> getNumbers() {
         return this.Numbers;
     }
@@ -49,6 +54,8 @@ public class Contacts {
     public void setName(String Name) {
         this.Name = Name;
     }
+    public void setEmail(String email) { this.email = email; }
+    public void setBirthday(Long birthday) { this.birthday= new Date(birthday); }
     public void addNumber(PhoneNumber Number) {
         this.Numbers.add(Number);
     }

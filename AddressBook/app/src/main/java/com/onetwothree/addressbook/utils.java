@@ -16,6 +16,14 @@ public class utils {
 
     static private final String TAG = "Utils";
 
+    static public boolean CheckEmailFormat(String mail) {
+        if (mail.matches("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     static public String formatDate(long time) {
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
         return format.format(new Date(time));

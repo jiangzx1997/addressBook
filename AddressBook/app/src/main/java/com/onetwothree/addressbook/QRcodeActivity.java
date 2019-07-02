@@ -74,10 +74,6 @@ public class QRcodeActivity extends AppCompatActivity {
      *  扫描二维码
      */
     public void scan(View view){
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            // 申请CAMERA权限
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
-        }
         mImg.setDrawingCacheEnabled(true);
         Bitmap bMap = Bitmap.createBitmap(mImg.getDrawingCache());
         mImg.setDrawingCacheEnabled(false);

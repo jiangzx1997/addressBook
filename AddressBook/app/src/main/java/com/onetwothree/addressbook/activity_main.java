@@ -40,7 +40,9 @@ public class activity_main extends AppCompatActivity {
         CallRecord callRecord;
 
         contacts = new Contacts();
-        contacts.setName("Liyang");
+        contacts.setName("Alice");
+        contacts.setBirthday(utils.GenerateDate(1999, 6, 30, 0, 0, 0).getTime());
+        contacts.setEmail("alice@test.com");
         phoneNumber = new PhoneNumber();
         phoneNumber.setNumber("18858559271");
         phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
@@ -55,20 +57,22 @@ public class activity_main extends AppCompatActivity {
 
         contacts = new Contacts();
         contacts.setName("Liyang");
+        contacts.setBirthday(utils.GenerateDate(1998, 7, 20, 0, 0, 0).getTime());
+        contacts.setEmail("liyang20090909@126.com");
         phoneNumber = new PhoneNumber();
-        phoneNumber.setNumber("12345789");
+        phoneNumber.setNumber("18605855921");
         phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
         contacts.addNumber(phoneNumber);
 
         phoneNumber = new PhoneNumber();
-        phoneNumber.setNumber("223456789");
-        phoneNumber.setType(PhoneNumber.PhoneType.Unknow);
+        phoneNumber.setNumber("883452345");
+        phoneNumber.setType(PhoneNumber.PhoneType.Home);
         contacts.addNumber(phoneNumber);
         dbutil.addContact(contacts);
 
         callRecord = new CallRecord();
         callRecord.setDate(utils.GenerateDate(2018, 4, 25, 10, 45, 22).getTime());
-        callRecord.setNumber("123456789");
+        callRecord.setNumber("18605855921");
         callRecord.setName("Liyang");
         callRecord.setTime(100);
         callRecord.setType(CallLog.Calls.INCOMING_TYPE);
@@ -76,7 +80,7 @@ public class activity_main extends AppCompatActivity {
 
         callRecord = new CallRecord();
         callRecord.setDate(utils.GenerateDate(2019, 4, 25, 10, 45, 22).getTime());
-        callRecord.setNumber("123456789");
+        callRecord.setNumber("88654517");
         callRecord.setName("Liyang");
         callRecord.setTime(100);
         callRecord.setType(CallLog.Calls.OUTGOING_TYPE);
@@ -84,12 +88,11 @@ public class activity_main extends AppCompatActivity {
 
         callRecord = new CallRecord();
         callRecord.setDate(utils.GenerateDate(2019, 6, 25, 10, 45, 22).getTime());
-        callRecord.setNumber("123456789");
+        callRecord.setNumber("88654517");
         callRecord.setName("Liyang");
         callRecord.setTime(100);
         callRecord.setType(CallLog.Calls.MISSED_TYPE);
         dbutil.AddCallRecord(callRecord);
-
     }
 
     void showAllContacts() {
@@ -97,6 +100,10 @@ public class activity_main extends AppCompatActivity {
         for (int i = 0; i < contacts.size(); ++ i) {
             Contacts contact = contacts.get(i);
             Log.v(TAG, "Get contact:" + contact.getName() + ":");
+            Log.v(TAG, "    email:" + contact.getEmail());
+            if (utils.CheckEmailFormat(contact.getEmail()))
+                Log.v(TAG, "    email format check pass");
+            Log.v(TAG, "    birthday:" + utils.formatDate(contact.getBirthday().getTime()));
             ArrayList<PhoneNumber> numbers = contact.getNumbers();
             for (int j = 0; j < numbers.size(); ++ j) {
                 PhoneNumber number = numbers.get(j);
@@ -119,7 +126,6 @@ public class activity_main extends AppCompatActivity {
 //        CallRecord callRecord = records.get(0);
 //        dbutil.DeleteCallRecord(callRecord.getDate().getTime());
 //        showAllCallRecord();
-        PrepareTestData();
         showAllContacts();
         Log.v(TAG, "now add a PhoneNumber for the first contact");
         ArrayList<Contacts> contacts = dbutil.getAllContacts();
@@ -174,12 +180,10 @@ public class activity_main extends AppCompatActivity {
         dbutil = Dbutil.getInstance();
 
         // for debug dbutil.
-//         debugTest();
-
+        dbutil.DropTable();
         Log.v(TAG, "request Permissions");
         ActivityCompat.requestPermissions(this, permissions, permissions_code);
 //        showAllCallRecord();
-        Log.v(TAG, "now come here");
     }
 
     @Override
@@ -188,6 +192,7 @@ public class activity_main extends AppCompatActivity {
 
         PrepareTestData();
         //showAllCallRecord();
+        showAllContacts();
 
         Intent intent = new Intent(activity_main.this, WelcomePage.class);
         startActivity(intent);
