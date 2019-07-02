@@ -3,8 +3,10 @@ package com.onetwothree.addressbook;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,6 +36,13 @@ public class Reminder extends BaseActivity implements
     RecyclerView mRecyclerView;
     DateToFestivalsUtil mDateToFestivalsUtil = new DateToFestivalsUtil();
 
+    @Override
+    protected void setActionBar() {
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("提醒");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+    }
 
     public static void show(Context context) {
         context.startActivity(new Intent(context, Reminder.class));
@@ -167,6 +176,18 @@ public class Reminder extends BaseActivity implements
     @Override
     public void onYearChange(int year) {
         mTextMonthDay.setText(String.valueOf(year));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
    /* public boolean isfestival(int year,int month,int day){

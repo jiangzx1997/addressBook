@@ -1,6 +1,7 @@
 package com.onetwothree.addressbook;
 
 import android.content.Context;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +71,7 @@ public class PhoneAdapter extends BaseAdapter implements PinnedSectionListAdapte
                     viewHolder = new ViewHolder();
                     view = layoutInflater.inflate(R.layout.item_phone_item, null);
                     viewHolder.txt = (TextView) view.findViewById(R.id.item_phone_txt_name);
+                    viewHolder.phonenumber = (TextView) view.findViewById(R.id.item_phone_txt_number);
                     view.setTag(viewHolder);
                 } else {
                     viewHolder = (ViewHolder) view.getTag();
@@ -77,6 +79,7 @@ public class PhoneAdapter extends BaseAdapter implements PinnedSectionListAdapte
 
                 //设置名字
                 viewHolder.txt.setText(list.get(i).getName());
+                viewHolder.phonenumber.setText(list.get(i).getNumbersString());
                 break;
             case ContactActivity.TITLE:
                 if (view == null) {
@@ -98,6 +101,7 @@ public class PhoneAdapter extends BaseAdapter implements PinnedSectionListAdapte
 
     private class ViewHolder {
         private TextView txt;
+        private TextView phonenumber;
     }
 
 }

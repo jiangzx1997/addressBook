@@ -23,13 +23,13 @@
         android:layout_below="@id/edit_search"
         android:background="@android:color/white" >
 
-        <com.example.window10.addressbook1.PinnedSectionListView
+        <com.onetwothree.addressbook.PinnedSectionListView
             android:id="@+id/phone_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="@null" />
 
-        <com.example.window10.addressbook1.LetterIndexView
+        <com.onetwothree.addressbook.LetterIndexView
             android:id="@+id/phone_LetterIndexView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

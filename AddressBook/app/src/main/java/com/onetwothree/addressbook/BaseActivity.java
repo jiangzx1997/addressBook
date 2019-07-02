@@ -28,6 +28,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void initData();
 
+    protected abstract void setActionBar();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         //Calendar calendar = new Calendar();
@@ -37,6 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         Log.v("tag", "1");
         setContentView(getLayoutId());
         Log.v("tag", "2");
+        setActionBar();
         initView();
         Log.v("tag", "3");
         initData();

@@ -1,12 +1,18 @@
 package com.onetwothree.addressbook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -62,14 +68,23 @@ public class ContactActivity extends AppCompatActivity {
      */
     public static final int TITLE = 1;
 
+    private ActionBar actionBar;
+    private Dbutil dbutil;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.contact_list);
         edit_search = (EditText) findViewById(R.id.edit_search);
         listView = (PinnedSectionListView) findViewById(R.id.phone_listview);
         letterIndexView = (LetterIndexView) findViewById(R.id.phone_LetterIndexView);
         txt_center = (TextView) findViewById(R.id.phone_txt_center);
+
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("通讯录");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        dbutil = Dbutil.getInstance();
 
         initView();
         initData();
@@ -173,6 +188,36 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                PopupMenu popup = new PopupMenu(ContactActivity.this, view);
+                popup.getMenuInflater().inflate(R.menu.contact_pop, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch(item.getItemId()) {
+                            case R.id.delete:
+                                Toast.makeText(ContactActivity.this, "删除", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.update:
+                                Toast.makeText(ContactActivity.this, "修改", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.qrcode:
+                                Intent intent = new Intent(ContactActivity.this, QRcodeActivity.class);
+                                intent.putExtra("data", list_show.get(position).getName()+"\n"+list_show.get(position).getNumbersString());
+                                startActivity(intent);
+                                Toast.makeText(ContactActivity.this, "导出二维码", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                        return true;
+                    }
+                });
+                popup.show();
+                return true;
+            }
+        });
+
         // 设置标题部分有阴影
         // listView.setShadowVisible(true);
     }
@@ -199,10 +244,18 @@ public class ContactActivity extends AppCompatActivity {
         @Override
         public void run() {
             String[] str = getResources().getStringArray(R.array.phone_all);
+            ArrayList<Contacts> contactsrec = dbutil.getAllContacts();
 
-            for (int i = 0; i < str.length; i++) {
+//            for (int i = 0; i < str.length; i++) {
+//                PhoneBean cityBean = new PhoneBean();
+//                cityBean.setName(str[i]);
+//                list_all.add(cityBean);
+//            }
+            for (int i = 0; i < contactsrec.size(); i++) {
                 PhoneBean cityBean = new PhoneBean();
-                cityBean.setName(str[i]);
+
+                cityBean.setName(contactsrec.get(i).getName());
+                cityBean.setNumbers(contactsrec.get(i).getNumbers());
                 list_all.add(cityBean);
             }
             //按拼音排序
@@ -242,4 +295,25 @@ public class ContactActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.contact_top_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                break;
+            case R.id.add_contact:
+                Toast.makeText(this, "contact", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
 }

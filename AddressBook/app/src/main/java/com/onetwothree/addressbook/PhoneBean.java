@@ -22,6 +22,11 @@ public class PhoneBean {
      * 是否是标题
      */
     private int type;
+    private ArrayList<PhoneNumber> numbers;
+
+    PhoneBean() {
+        numbers = new ArrayList<>();
+    }
 
     public String getHeadChar() {
         return headChar;
@@ -35,12 +40,27 @@ public class PhoneBean {
         return name_en;
     }
 
+    public ArrayList<PhoneNumber> getNumbers() {return numbers;}
+    public String getNumbersString() {
+        StringBuilder tmp = new StringBuilder("");
+        for (PhoneNumber s: numbers) {
+            tmp.append(s.getNumber()+"\n");
+        }
+        tmp.deleteCharAt(tmp.length()-1);
+        return tmp.toString();
+    }
+
     public int getType() {
         return type;
     }
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public void setNumbers(ArrayList<PhoneNumber> x) {
+        for (PhoneNumber s: x)
+            numbers.add(s);
     }
 
     public void setName(String name) {

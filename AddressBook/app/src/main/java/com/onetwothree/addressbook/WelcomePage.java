@@ -46,6 +46,7 @@ public class WelcomePage extends AppCompatActivity {
                 break;
             case R.id.contact_button:
                 Toast.makeText(this, "contact", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(WelcomePage.this, ContactActivity.class));
                 break;
             case R.id.reminder_button:
                 startActivity(new Intent(WelcomePage.this, Reminder.class));

@@ -52,6 +52,24 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".ContactActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.ContactActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".QRcodeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.QRcodeActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
         </activity>
 
     </application>
