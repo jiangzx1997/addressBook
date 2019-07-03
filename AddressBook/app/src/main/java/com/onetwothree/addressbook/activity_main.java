@@ -57,43 +57,190 @@ public class activity_main extends AppCompatActivity {
 
 
         contacts = new Contacts();
-        contacts.setName("Liyang");
-        contacts.setBirthday(utils.GenerateDate(1998, 7,3, 0, 0, 0).getTime());
-        contacts.setEmail("liyang20090909@126.com");
+        contacts.setName("Bob");
+        contacts.setBirthday(utils.GenerateDate(1998, 4,3, 0, 0, 0).getTime());
+        contacts.setEmail("1602546812@qq.com");
         phoneNumber = new PhoneNumber();
         phoneNumber.setNumber("18605855921");
         phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
         contacts.addNumber(phoneNumber);
 
         phoneNumber = new PhoneNumber();
-        phoneNumber.setNumber("883452345");
+        phoneNumber.setNumber("95412549");
+        phoneNumber.setType(PhoneNumber.PhoneType.Company);
+        contacts.addNumber(phoneNumber);
+
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("84123647");
         phoneNumber.setType(PhoneNumber.PhoneType.Home);
         contacts.addNumber(phoneNumber);
+
+        dbutil.addContact(contacts);
+
+
+        contacts = new Contacts();
+        contacts.setName("Cared");
+        contacts.setBirthday(utils.GenerateDate(1994, 7,3, 0, 0, 0).getTime());
+        contacts.setEmail("cared123456@163.com");
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("188543135154");
+        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+        contacts.addNumber(phoneNumber);
+
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("85442649");
+        phoneNumber.setType(PhoneNumber.PhoneType.Company);
+        contacts.addNumber(phoneNumber);
+
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("74542478");
+        phoneNumber.setType(PhoneNumber.PhoneType.Home);
+        contacts.addNumber(phoneNumber);
+
+        dbutil.addContact(contacts);
+
+        contacts = new Contacts();
+        contacts.setName("Riker");
+        contacts.setBirthday(utils.GenerateDate(1996, 3,12, 0, 0, 0).getTime());
+        contacts.setEmail("Riker1452@123.com");
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("15936214258");
+        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+        contacts.addNumber(phoneNumber);
+
+        dbutil.addContact(contacts);
+
+        contacts = new Contacts();
+        contacts.setName("Mikoo");
+        contacts.setBirthday(utils.GenerateDate(1999, 1,5, 0, 0, 0).getTime());
+        contacts.setEmail("mikomiko@gmail.com");
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("16452143528");
+        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+        contacts.addNumber(phoneNumber);
+
+        dbutil.addContact(contacts);
+
+        contacts = new Contacts();
+        contacts.setName("Zerj");
+        contacts.setBirthday(utils.GenerateDate(1996, 5,2, 0, 0, 0).getTime());
+        contacts.setEmail("Zzzzzzzzzz@gmail.com");
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("18963211425");
+        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+        contacts.addNumber(phoneNumber);
+
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("18920124158");
+        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+        contacts.addNumber(phoneNumber);
+
+        dbutil.addContact(contacts);
+
+        contacts = new Contacts();
+        contacts.setName("Parere");
+        contacts.setBirthday(utils.GenerateDate(1998, 11,4, 0, 0, 0).getTime());
+        contacts.setEmail("Prerererere@gmail.com");
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("16895214255");
+        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+        contacts.addNumber(phoneNumber);
+
+        phoneNumber = new PhoneNumber();
+        phoneNumber.setNumber("86241254");
+        phoneNumber.setType(PhoneNumber.PhoneType.Home);
+        contacts.addNumber(phoneNumber);
+
         dbutil.addContact(contacts);
 
         callRecord = new CallRecord();
-        callRecord.setDate(utils.GenerateDate(2018, 4, 25, 10, 45, 22).getTime());
-        callRecord.setNumber("18605855921");
-        callRecord.setName("Liyang");
-        callRecord.setTime(100);
+        callRecord.setDate(utils.GenerateDate(2018, 2, 23, 15, 4, 10).getTime());
+        callRecord.setNumber("18858559271");
+        callRecord.setName("Alice");
+        callRecord.setTime(30);
         callRecord.setType(CallLog.Calls.INCOMING_TYPE);
         dbutil.AddCallRecord(callRecord);
 
         callRecord = new CallRecord();
-        callRecord.setDate(utils.GenerateDate(2019, 4, 25, 10, 45, 22).getTime());
+        callRecord.setDate(utils.GenerateDate(2018, 4, 1, 12, 45, 22).getTime());
+        callRecord.setNumber("18605855921");
+        callRecord.setName("Bob");
+        callRecord.setTime(256);
+        callRecord.setType(CallLog.Calls.INCOMING_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 5, 6, 10, 31, 14).getTime());
         callRecord.setNumber("88654517");
-        callRecord.setName("Liyang");
-        callRecord.setTime(100);
+        callRecord.setName("Bob");
+        callRecord.setTime(54);
         callRecord.setType(CallLog.Calls.OUTGOING_TYPE);
         dbutil.AddCallRecord(callRecord);
 
         callRecord = new CallRecord();
-        callRecord.setDate(utils.GenerateDate(2019, 6, 25, 10, 45, 22).getTime());
+        callRecord.setDate(utils.GenerateDate(2019, 6, 25, 23, 45, 11).getTime());
         callRecord.setNumber("88654517");
-        callRecord.setName("Liyang");
-        callRecord.setTime(100);
+        callRecord.setName("Bob");
+        callRecord.setTime(95);
         callRecord.setType(CallLog.Calls.MISSED_TYPE);
         dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 7, 3, 17, 44, 3).getTime());
+        callRecord.setNumber("16452143528");
+        callRecord.setName("Mikoo");
+        callRecord.setTime(600);
+        callRecord.setType(CallLog.Calls.OUTGOING_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 7, 1, 15, 22, 12).getTime());
+        callRecord.setNumber("18920124158");
+        callRecord.setName("Zerj");
+        callRecord.setTime(55);
+        callRecord.setType(CallLog.Calls.INCOMING_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 7, 2, 23, 35, 8).getTime());
+        callRecord.setNumber("85442649");
+        callRecord.setName("Cared");
+        callRecord.setTime(20);
+        callRecord.setType(CallLog.Calls.MISSED_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 7, 2, 23, 38, 12).getTime());
+        callRecord.setNumber("85442649");
+        callRecord.setName("Cared");
+        callRecord.setTime(15);
+        callRecord.setType(CallLog.Calls.MISSED_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 7, 2, 23, 40, 4).getTime());
+        callRecord.setNumber("85442649");
+        callRecord.setName("Cared");
+        callRecord.setTime(16);
+        callRecord.setType(CallLog.Calls.MISSED_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 7, 2, 23, 42, 35).getTime());
+        callRecord.setNumber("85442649");
+        callRecord.setName("Cared");
+        callRecord.setTime(18);
+        callRecord.setType(CallLog.Calls.MISSED_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
+        callRecord = new CallRecord();
+        callRecord.setDate(utils.GenerateDate(2019, 7, 3, 12, 12, 10).getTime());
+        callRecord.setNumber("18963211425");
+        callRecord.setName("Zerj");
+        callRecord.setTime(55);
+        callRecord.setType(CallLog.Calls.OUTGOING_TYPE);
+        dbutil.AddCallRecord(callRecord);
+
     }
 
     void showAllContacts() {

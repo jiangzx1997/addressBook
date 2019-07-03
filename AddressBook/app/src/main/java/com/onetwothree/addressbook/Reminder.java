@@ -238,7 +238,7 @@ public class Reminder extends BaseActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.contact_top_menu, menu);
+        inflater.inflate(R.menu.reminder_top, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
