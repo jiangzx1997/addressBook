@@ -119,7 +119,7 @@ public class Dbutil {
         cursor = db.rawQuery("select phone_id from Phone_Contact where contact_id=?", new String[]{String.valueOf(id)});
         while (cursor.moveToNext()) {
             int _id = cursor.getInt(cursor.getColumnIndex("phone_id"));
-            phone_id.add(id);
+            phone_id.add(_id);
         }
 
         db.delete("Phone_Contact", "contact_id=?", new String[]{String.valueOf(id)});
@@ -215,7 +215,13 @@ public class Dbutil {
 
     // 获取所有通话记录
     public ArrayList<CallRecord> getAllCallRecord() {
-        return callRecordUtil.GetCallsInPhone();
+        ArrayList<CallRecord> callRecords = callRecordUtil.GetCallsInPhone();
+        for (int i = 0; i < callRecords.size(); ++ i) {
+            CallRecord callRecord = callRecords.get(i);
+            String name = this.getContactByNumber(callRecord.getNumber()).getName();
+            callRecord.setName(name);
+        }
+        return callRecords;
     }
 
     // 根据电话号码给出联系人, 若没找到，则返回姓名为"Unknow"的联系人
@@ -230,8 +236,9 @@ public class Dbutil {
             int phone_id = cursor.getInt(cursor.getColumnIndex("_id"));
             Log.v(TAG, "get phone_id = " + String.valueOf(phone_id));
             cursor = db.rawQuery("select * from Phone_Contact where phone_id=?", new String[]{String.valueOf(phone_id)});
-            cursor.moveToFirst();
-            contact_id = cursor.getInt(cursor.getColumnIndex("contact_id"));
+            if (cursor.moveToFirst())
+                contact_id = cursor.getInt(cursor.getColumnIndex("contact_id"));
+            Log.v(TAG, "get contact_id = " + String.valueOf(contact_id));
         }
         db.close();
         return GetContactById(contact_id);

@@ -337,7 +337,7 @@ public class ContactActivity extends AppCompatActivity {
     public void custom_view_delete() {
 
         TableLayout add_word_form = (TableLayout) getLayoutInflater()
-                .inflate(R.layout.delete_call_log, null);
+                .inflate(R.layout.delete_contact, null);
         dialogBuilder = new AlertDialog.Builder(this);
         alertDialog = dialogBuilder
                 /*// 设置图标

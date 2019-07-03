@@ -54,7 +54,7 @@ public class CallRecordUtil {
                     } else {
                         record.setNumber(cursor.getString(6));
                     }
-                    record.setName(cursor.getString(2));
+//                    record.setName(cursor.getString(2));
                     record.setType(cursor.getInt(3));
                     record.setDate(cursor.getLong(4));
                     record.setTime(cursor.getLong(5));
