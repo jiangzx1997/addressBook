@@ -29,6 +29,10 @@ public class utils {
         return format.format(new Date(time));
     }
 
+    static public String formatDateBirth(long time) {
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        return format.format(new Date(time));
+    }
     static public String formatDuration(long time) {
         long s = time % 60;
         long m = time / 60;

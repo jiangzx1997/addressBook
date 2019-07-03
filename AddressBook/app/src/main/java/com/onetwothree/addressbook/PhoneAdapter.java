@@ -19,13 +19,13 @@ public class PhoneAdapter extends BaseAdapter implements PinnedSectionListAdapte
     /**
      * 数据集
      */
-    private ArrayList<PhoneBean> list;
+    private ArrayList<Contacts> list;
     /**
      * 首字母
      */
     public HashMap<String, Integer> map_IsHead;
 
-    public PhoneAdapter(Context context, ArrayList<PhoneBean> list, HashMap<String, Integer> map_IsHead) {
+    public PhoneAdapter(Context context, ArrayList<Contacts> list, HashMap<String, Integer> map_IsHead) {
         this.list = list;
         this.map_IsHead = map_IsHead;
         layoutInflater = LayoutInflater.from(context);

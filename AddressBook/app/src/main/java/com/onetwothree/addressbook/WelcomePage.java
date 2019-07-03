@@ -1,15 +1,12 @@
 package com.onetwothree.addressbook;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 /**
@@ -42,7 +39,7 @@ public class WelcomePage extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.call_log_button:
-                startActivity(new Intent(WelcomePage.this, CallLog.class));
+                startActivity(new Intent(WelcomePage.this, CallLogActivity.class));
                 break;
             case R.id.contact_button:
                 Toast.makeText(this, "contact", Toast.LENGTH_SHORT).show();

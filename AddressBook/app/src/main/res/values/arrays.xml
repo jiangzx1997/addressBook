@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="types">
+        <item>Unknow</item>
+        <item>Home</item>
+        <item>Mobile</item>
+        <item>Company</item>
+    </string-array>
+</resources>

@@ -86,8 +86,8 @@ public class CallRecordUtil {
             ActivityCompat.requestPermissions(this.activity, new String[]{Manifest.permission.READ_CALL_LOG}, 100);
             return;
         }
-        Cursor cursor = context.getContentResolver().query(CallLog.Calls.CONTENT_URI,
-                new String[]{CallLog.Calls.DATE}, null, null, null);
+        Cursor cursor = context.getContentResolver().query(CallLogActivity.Calls.CONTENT_URI,
+                new String[]{CallLogActivity.Calls.DATE}, null, null, null);
         while (cursor.moveToNext()) {
             Log.v(TAG, String.valueOf(cursor.getLong(0)));
         }*/

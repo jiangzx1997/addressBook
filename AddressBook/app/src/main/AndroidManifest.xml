@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".CallLog">
+        <activity android:name=".CallLogActivity">
             <intent-filter>
                 <action android:name="com.onetwothree.addressbook.CallLog" />
 
@@ -60,7 +60,15 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
 
+        <activity
+            android:name=".ContactDetail">
+            <intent-filter>
+                <action android:name="com.onetwothree.addressbook.ContactDetail" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".QRcodeActivity">
