@@ -1,30 +1,24 @@
-package com.onetwothree.addressbook;
+package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarLayout;
 import com.haibin.calendarview.CalendarView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
-public class Reminder extends BaseActivity implements
+public class MainActivity extends BaseActivity implements
         CalendarView.OnDateSelectedListener,
         CalendarView.OnYearChangeListener,
         View.OnClickListener{
@@ -39,26 +33,17 @@ public class Reminder extends BaseActivity implements
     private int mYear;
     CalendarLayout mCalendarLayout;
     RecyclerView mRecyclerView;
-    private Dbutil dbutil;
-    private Intent intent;
     DateToFestivalsUtil mDateToFestivalsUtil = new DateToFestivalsUtil();
 
-    @Override
-    protected void setActionBar() {
-        dbutil = Dbutil.getInstance();
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
-        actionBar.setTitle("提醒");
-    }
 
     public static void show(Context context) {
-        context.startActivity(new Intent(context, Reminder.class));
+        context.startActivity(new Intent(context, MainActivity.class));
     }
 
 
     @Override
     protected int getLayoutId() {
-        return R.layout.reminder;
+        return R.layout.activity_main;
     }
 
     @SuppressLint("SetTextI18n")
@@ -151,18 +136,6 @@ public class Reminder extends BaseActivity implements
             stringList.add("今天是" + Festival + "节,记得给家人打电话哦" );
         }
 
-        ArrayList<Remind> remind = dbutil.GetAllRemind();
-        for (Remind r: remind) {
-            Date tmp = new Date(year, month, day);
-            int contact_id = r.getContact_id();
-            String name = dbutil.GetContactById(contact_id).getName();
-            Log.d("reminder", r.getDate().toString()+"\n"+tmp.toString());
-            if (r.getDate().toString().equals(tmp.toString())) {
-
-                stringList.add("今天是"+name+"的生日，记得给他打电话哦");
-            }
-        }
-
 
 
         //mListView = (ListView) findViewById(R.id.listView);
@@ -196,7 +169,6 @@ public class Reminder extends BaseActivity implements
     public void onYearChange(int year) {
         mTextMonthDay.setText(String.valueOf(year));
     }
-
 
    /* public boolean isfestival(int year,int month,int day){
         String str = null;
@@ -238,39 +210,7 @@ public class Reminder extends BaseActivity implements
         }
     }*/
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.contact_top_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                break;
-            case R.id.call_log_button:
-                intent = new Intent ();
-                intent.putExtra("datareturn", 1);
-                setResult(RESULT_OK, intent);
-                this.finish();
-                break;
-            case R.id.contact_button:
-                intent = new Intent ();
-                intent.putExtra("datareturn", 2);
-                setResult(RESULT_OK, intent);
-                this.finish();
-                break;
-            case R.id.add_contact:
-                Toast.makeText(this, "contact", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        return true;
-    }
 }
 
 
