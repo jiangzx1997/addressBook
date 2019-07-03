@@ -24,28 +24,28 @@
         android:text="电话号码："
         android:textColor="@color/colorBlack"
         android:layout_below="@id/name1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/name"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:text="name"
         android:layout_toRightOf="@id/number1"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/number"
         android:textSize="20dp"
         android:text="number"
         android:layout_below="@id/name1"
         android:layout_toRightOf="@id/number1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp" />
 
     <TextView
@@ -56,18 +56,18 @@
         android:text="生日:"
         android:textColor="@color/colorBlack"
         android:layout_below="@id/number"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/birth"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:text="birth"
         android:layout_toRightOf="@id/birth1"
         android:layout_below="@id/number"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp"/>
 
     <TextView
@@ -78,18 +78,18 @@
         android:text="邮箱:"
         android:textColor="@color/colorBlack"
         android:layout_below="@id/birth1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/email"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:text="email"
         android:layout_toRightOf="@id/email1"
         android:layout_below="@id/birth1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp"/>
 
     <Button
