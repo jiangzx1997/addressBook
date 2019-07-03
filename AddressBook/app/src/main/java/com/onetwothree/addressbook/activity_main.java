@@ -24,6 +24,7 @@ public class activity_main extends AppCompatActivity {
 
     private final String TAG = "Activity_Main";
     private CallRecordUtil callRecord;
+    private Remind remindRecord;
     private DbOpenHandler helper;
     private Dbutil dbutil;
     private ActionBar actionBar;
