@@ -87,6 +87,7 @@ public class ContactActivity extends AppCompatActivity {
 
     private ActionBar actionBar;
     private Dbutil dbutil;
+    private Intent intent;
 
     //对话框
     AlertDialog alertDialog = null;
@@ -105,7 +106,6 @@ public class ContactActivity extends AppCompatActivity {
 
         actionBar = getSupportActionBar();
         actionBar.setTitle("通讯录");
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         dbutil = Dbutil.getInstance();
         //防止软键盘顶控件
@@ -565,6 +565,18 @@ public class ContactActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                this.finish();
+                break;
+            case R.id.call_log_button:
+                intent = new Intent ();
+                intent.putExtra("datareturn", 1);
+                setResult(RESULT_OK, intent);
+                this.finish();
+                break;
+            case R.id.reminder_button:
+                intent = new Intent ();
+                intent.putExtra("datareturn", 3);
+                setResult(RESULT_OK, intent);
                 this.finish();
                 break;
             case R.id.add_contact:

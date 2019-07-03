@@ -76,6 +76,7 @@ public class CallLogActivity extends AppCompatActivity {
 
     //根据号码筛选
     String number_phone = "";
+    private Intent intent;
 
     @Override
     protected void onResume() {
@@ -91,7 +92,6 @@ public class CallLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.call_log);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setTitle("通话记录");
         //日期统计
@@ -153,6 +153,18 @@ public class CallLogActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 Toast.makeText(this, "返回上一级界面", Toast.LENGTH_SHORT).show();
+                this.finish();
+                break;
+            case R.id.contact_button:
+                intent = new Intent ();
+                intent.putExtra("datareturn", 2);
+                setResult(RESULT_OK, intent);
+                this.finish();
+                break;
+            case R.id.reminder_button:
+                intent = new Intent ();
+                intent.putExtra("datareturn", 3);
+                setResult(RESULT_OK, intent);
                 this.finish();
                 break;
             case R.id.menu1:

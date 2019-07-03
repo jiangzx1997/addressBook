@@ -2,6 +2,21 @@
 <!--suppress AndroidDomInspection -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/call_log_button"
+        android:title="通话记录"
+        android:icon="@android:drawable/ic_menu_call"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
+    <item android:id="@+id/contact_button"
+        android:title="联系人"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/sym_contact_card"
+        app:showAsAction="always"/>
+    <item android:id="@+id/reminder_button"
+        android:title="提醒事项"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
     <item android:id="@+id/menu1"
         android:title="根据日期筛选"
         android:orderInCategory="100"
