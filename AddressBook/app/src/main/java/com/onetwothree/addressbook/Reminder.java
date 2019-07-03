@@ -125,7 +125,6 @@ public class Reminder extends BaseActivity implements
         int month = mCalendarView.getCurMonth();
         int day = mCalendarView.getCurDay();
 
-
         String Festival=mDateToFestivalsUtil.getLunarDate(year,month,day,false);
 
 
@@ -151,15 +150,13 @@ public class Reminder extends BaseActivity implements
             stringList.add("今天是" + Festival + "节,记得给家人打电话哦" );
         }
 
-        ArrayList<Remind> remind = dbutil.GetAllRemind();
-        for (Remind r: remind) {
-            Date tmp = new Date(year, month, day);
-            int contact_id = r.getContact_id();
-            String name = dbutil.GetContactById(contact_id).getName();
-            Log.d("reminder", r.getDate().toString()+"\n"+tmp.toString());
-            if (r.getDate().toString().equals(tmp.toString())) {
+        ArrayList<Contacts> contacts = dbutil.getAllContacts();
+        for (Contacts r: contacts) {
+            String name = r.getName();
+            Log.d("reminder", r.getBirthday().toString()+"\n"+r.getBirthday().getMonth()+"\n"+r.getBirthday().getDate()+"\n");
+            if (r.getBirthday().getMonth()+1 == month && r.getBirthday().getDate() == day) {
 
-                stringList.add("今天是"+name+"的生日，记得给他打电话哦");
+                stringList.add("今天是"+name+"的生日，要给他打电话哦");
             }
         }
 

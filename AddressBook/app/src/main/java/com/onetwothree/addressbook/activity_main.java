@@ -42,7 +42,7 @@ public class activity_main extends AppCompatActivity {
 
         contacts = new Contacts();
         contacts.setName("Alice");
-        contacts.setBirthday(utils.GenerateDate(1999, 6, 30, 0, 0, 0).getTime());
+        contacts.setBirthday(utils.GenerateDate(1996, 7, 3, 0, 0, 0).getTime());
         contacts.setEmail("alice@test.com");
         phoneNumber = new PhoneNumber();
         phoneNumber.setNumber("18858559271");
@@ -58,7 +58,7 @@ public class activity_main extends AppCompatActivity {
 
         contacts = new Contacts();
         contacts.setName("Liyang");
-        contacts.setBirthday(utils.GenerateDate(1998, 7, 20, 0, 0, 0).getTime());
+        contacts.setBirthday(utils.GenerateDate(1998, 7,3, 0, 0, 0).getTime());
         contacts.setEmail("liyang20090909@126.com");
         phoneNumber = new PhoneNumber();
         phoneNumber.setNumber("18605855921");
