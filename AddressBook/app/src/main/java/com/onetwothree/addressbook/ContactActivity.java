@@ -399,6 +399,7 @@ public class ContactActivity extends AppCompatActivity {
             list_show.add(cityBean);
         }
         listView.setAdapter(adapter);
+        edit_search.setText("");
     }
     
     //添加联系人
@@ -464,6 +465,7 @@ public class ContactActivity extends AppCompatActivity {
             list_show.add(cityBean);
         }
         listView.setAdapter(adapter);
+        edit_search.setText("");
     }
 
     //添加联系人对话框

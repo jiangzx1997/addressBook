@@ -2,6 +2,7 @@ package com.onetwothree.addressbook;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CallLog;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -24,7 +25,7 @@ public class WelcomePage extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setTitle("通讯录");
         actionBar.setDisplayHomeAsUpEnabled(true);
-        startActivityForResult(new Intent(WelcomePage.this, CallLog.class), 1);
+        startActivityForResult(new Intent(WelcomePage.this, CallLogActivity.class), 1);
     }
 
     @Override
@@ -38,7 +39,7 @@ public class WelcomePage extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.call_log_button:
-                startActivityForResult(new Intent(WelcomePage.this, CallLog.class), 1);
+                startActivityForResult(new Intent(WelcomePage.this, CallLogActivity.class), 1);
                 break;
             case R.id.contact_button:
                 startActivityForResult(new Intent(WelcomePage.this, ContactActivity.class), 1);
@@ -61,7 +62,7 @@ public class WelcomePage extends AppCompatActivity {
                     int ReturnData = data.getIntExtra("datareturn", 1);
                     switch (ReturnData) {
                         case 1:
-                            startActivityForResult(new Intent(WelcomePage.this, CallLog.class), 1);
+                            startActivityForResult(new Intent(WelcomePage.this, CallLogActivity.class), 1);
                             break;
                         case 2:
                             startActivityForResult(new Intent(WelcomePage.this, ContactActivity.class), 1);
