@@ -17,7 +17,9 @@ public class CallRecord {
     private int type;
     private String Location; //(TODO)
 
-    CallRecord() { }
+    CallRecord() {
+        this.Name = new String("Unknow");
+    }
 
     public String getName() {
         return this.Name;
