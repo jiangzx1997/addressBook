@@ -82,7 +82,7 @@ public class CallLogDetail extends AppCompatActivity {
                 finish();
                 break;
             case R.id.menu1:
-                Toast.makeText(this, "扩展功能", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "扩展功能", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 return super.onOptionsItemSelected(item);

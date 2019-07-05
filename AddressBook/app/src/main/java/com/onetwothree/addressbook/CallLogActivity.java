@@ -152,7 +152,7 @@ public class CallLogActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Toast.makeText(this, "返回上一级界面", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "返回上一级界面", Toast.LENGTH_SHORT).show();
                 this.finish();
                 break;
             case R.id.contact_button:
@@ -168,14 +168,14 @@ public class CallLogActivity extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.menu1:
-                Toast.makeText(this, "根据日期筛选", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "根据日期筛选", Toast.LENGTH_SHORT).show();
                 //使用日期筛选功能
                 date_opt = true;
                 //选择日期
                 search_by_date_dialog();
                 break;
             case R.id.menu2:
-                Toast.makeText(this, "取消日期筛选", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "取消日期筛选", Toast.LENGTH_SHORT).show();
                 //不使用日期筛选功能
                 date_opt = false;
                 //只显示通过号码筛选的通讯记录
@@ -261,20 +261,20 @@ public class CallLogActivity extends AppCompatActivity {
                 public boolean onMenuItemClick(MenuItem item) {
                     switch(item.getItemId()){
                         case R.id.call_number:
-                            Toast.makeText(getBaseContext(),"拨打电话号码",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getBaseContext(),"拨打电话号码",Toast.LENGTH_SHORT).show();
                             //callPhone(utils.PhoneNumberDeformat(records.get(choose).getNumber()));
-                            Toast.makeText(getBaseContext(),String.valueOf(choose),Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getBaseContext(),String.valueOf(choose),Toast.LENGTH_SHORT).show();
                             callPhone(records.get(choose).getNumber());
                             break;
                         case R.id.copy_number:
-                            Toast.makeText(getBaseContext(),"复制电话号码",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getBaseContext(),"复制电话号码",Toast.LENGTH_SHORT).show();
                             ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                             ClipData mClipData = ClipData.newPlainText("Label", utils.PhoneNumberDeformat(
                                     records.get(choose).getNumber()));
                             cm.setPrimaryClip(mClipData);
                             break;
                         case R.id.delete_number:
-                            Toast.makeText(getBaseContext(),"删除通话记录",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getBaseContext(),"删除通话记录",Toast.LENGTH_SHORT).show();
                             //删除通话记录
                             custom_view_delete();
                             break;
@@ -300,7 +300,7 @@ public class CallLogActivity extends AppCompatActivity {
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
-            Toast.makeText(this,"拨打电话号码失败",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"拨打电话号码失败",Toast.LENGTH_SHORT).show();
             return;
         }
         startActivity(intent);

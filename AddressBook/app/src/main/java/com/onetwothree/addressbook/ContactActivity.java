@@ -213,7 +213,7 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view,int i, long l) {
                 if (list_show.get(i).getType() == ContactActivity.ITEM) {// 标题点击不给操作
-                    Toast.makeText(ContactActivity.this,list_show.get(i).getName(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(ContactActivity.this,list_show.get(i).getName(), Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(adapterView.getContext(), ContactDetail.class);
                     intent.putExtra("name", list_show.get(i).getName());
                     intent.putExtra("number", list_show.get(i).getNumbersString());
@@ -239,12 +239,12 @@ public class ContactActivity extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch(item.getItemId()) {
                             case R.id.delete:
-                                Toast.makeText(ContactActivity.this, "删除", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ContactActivity.this, "删除", Toast.LENGTH_SHORT).show();
                                 choose = position;
                                 custom_view_delete();
                                 break;
                             case R.id.update:
-                                Toast.makeText(ContactActivity.this, "修改", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ContactActivity.this, "修改", Toast.LENGTH_SHORT).show();
                                 choose = position;
                                 custom_view_change();
                                 break;
@@ -253,7 +253,7 @@ public class ContactActivity extends AppCompatActivity {
                                 intent.putExtra("data", list_show.get(position).getName()+"\n"+list_show.get(position).getNumbersString()+"\n"
                                         +list_show.get(position).getBirthday()+"\n"+list_show.get(position).getEmail());
                                 startActivity(intent);
-                                Toast.makeText(ContactActivity.this, "导出二维码", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ContactActivity.this, "导出二维码", Toast.LENGTH_SHORT).show();
                                 break;
                         }
                         return true;
@@ -777,7 +777,7 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 EditText birth_input = (EditText) alertDialog.findViewById(R.id.birth);
-                Toast.makeText(getBaseContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_SHORT).show();
                 birth_input.setText((year + "-" + monthOfYear + "-" + dayOfMonth).toString());
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
