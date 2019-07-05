@@ -250,7 +250,8 @@ public class ContactActivity extends AppCompatActivity {
                                 break;
                             case R.id.qrcode:
                                 Intent intent = new Intent(ContactActivity.this, QRcodeActivity.class);
-                                intent.putExtra("data", list_show.get(position).getName()+"\n"+list_show.get(position).getNumbersString());
+                                intent.putExtra("data", list_show.get(position).getName()+"\n"+list_show.get(position).getNumbersString()+"\n"
+                                        +list_show.get(position).getBirthday()+"\n"+list_show.get(position).getEmail());
                                 startActivity(intent);
                                 Toast.makeText(ContactActivity.this, "导出二维码", Toast.LENGTH_SHORT).show();
                                 break;
