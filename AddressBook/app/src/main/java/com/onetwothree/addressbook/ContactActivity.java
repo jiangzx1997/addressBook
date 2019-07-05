@@ -2,21 +2,17 @@ package com.onetwothree.addressbook;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.ContactsContract;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -249,6 +245,8 @@ public class ContactActivity extends AppCompatActivity {
                                 break;
                             case R.id.update:
                                 Toast.makeText(ContactActivity.this, "修改", Toast.LENGTH_SHORT).show();
+                                choose = position;
+                                custom_view_change();
                                 break;
                             case R.id.qrcode:
                                 Intent intent = new Intent(ContactActivity.this, QRcodeActivity.class);
@@ -403,39 +401,36 @@ public class ContactActivity extends AppCompatActivity {
     }
     
     //添加联系人
-    private void add_contact(String name, String number, String email, String birth, int index){
+    private void add_contact(String name, ArrayList<PhoneNumber> numbers, String email, String birth){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
-        if (birth != ""){
-            try {
-                date = sdf.parse(birth);
-            } catch (ParseException err) {
-            }
+        if (birth.equals("")) {
+            birth = "1111-1-1";
+        }
+        try {
+            date = sdf.parse(birth);
+        } catch (ParseException err) {
         }
         Contacts contacts;
-        PhoneNumber phoneNumber;
         contacts = new Contacts();
         contacts.setName(name);
         if (date != null)
             contacts.setBirthday(date.getTime());
         contacts.setEmail(email);
-        phoneNumber = new PhoneNumber();
-        phoneNumber.setNumber(number);
-        switch (index){
-            case 0:
-                phoneNumber.setType(PhoneNumber.PhoneType.Unknow);
-                break;
-            case 1:
-                phoneNumber.setType(PhoneNumber.PhoneType.Home);
-                break;
-            case 2:
-                phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
-                break;
-            case 3:
-                phoneNumber.setType(PhoneNumber.PhoneType.Company);
-                break;
+
+        if (numbers.size() == 0){
+            PhoneNumber phoneNumber = new PhoneNumber();
+            phoneNumber.setNumber("");
+            phoneNumber.setType(PhoneNumber.PhoneType.Unknow);
+            contacts.addNumber(phoneNumber);
         }
-        contacts.addNumber(phoneNumber);
+        else{
+            for (int i = 0; i < numbers.size(); i++){
+                contacts.addNumber(numbers.get(i));
+            }
+        }
+
+
         dbutil.addContact(contacts);
 
         ArrayList<Contacts> allContacts = dbutil.getAllContacts();
@@ -469,7 +464,7 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     //添加联系人对话框
-    public void customViewAdd() {
+    public void custom_view_add() {
         TableLayout add_word_form = (TableLayout) getLayoutInflater()
                 .inflate(R.layout.add_contact, null);
         dialogBuilder = new AlertDialog.Builder(this);
@@ -489,16 +484,53 @@ public class ContactActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         EditText name_input = (EditText)alertDialog.findViewById(R.id.name);
                         //Toast.makeText(mContext, "点击了确定按钮", Toast.LENGTH_SHORT).show();
-                        EditText number_input = (EditText)alertDialog.findViewById(R.id.number);
+
                         EditText email_input = (EditText) alertDialog.findViewById(R.id.email);
                         EditText birth_input = (EditText) alertDialog.findViewById(R.id.birth);
-                        Spinner sp = (Spinner) alertDialog.findViewById(R.id.types);
+
+                        ArrayList<EditText> ed = new ArrayList<EditText>();
+                        ArrayList<Spinner> sp = new ArrayList<Spinner>();
+                        EditText number_input_1 = (EditText)alertDialog.findViewById(R.id.number1);
+                        Spinner sp_1 = (Spinner) alertDialog.findViewById(R.id.types1);
+                        ed.add(number_input_1);
+                        sp.add(sp_1);
+                        EditText number_input_2 = (EditText)alertDialog.findViewById(R.id.number2);
+                        Spinner sp_2 = (Spinner) alertDialog.findViewById(R.id.types2);
+                        ed.add(number_input_2);
+                        sp.add(sp_2);
+                        EditText number_input_3 = (EditText)alertDialog.findViewById(R.id.number3);
+                        Spinner sp_3 = (Spinner) alertDialog.findViewById(R.id.types3);
+                        ed.add(number_input_3);
+                        sp.add(sp_3);
+                        ArrayList<PhoneNumber> numbers = new ArrayList<PhoneNumber>();
+                        for (int i = 0; i < 3; i++){
+                            String number = ed.get(i).getText().toString();
+                            int index = sp.get(i).getSelectedItemPosition();
+                            if (!number.equals("")){
+                                PhoneNumber phoneNumber = new PhoneNumber();
+                                phoneNumber.setNumber(number);
+                                switch (index){
+                                    case 0:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Unknow);
+                                        break;
+                                    case 1:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Home);
+                                        break;
+                                    case 2:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+                                        break;
+                                    case 3:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Company);
+                                        break;
+                                }
+                                numbers.add(phoneNumber);
+                            }
+                        }
 
                         String name = name_input.getText().toString();
-                        String numnber = number_input.getText().toString();
                         String email = email_input.getText().toString();
                         String birth = birth_input.getText().toString();
-                        int index = sp.getSelectedItemPosition();
+
                         if("".equals(name)){
                             Toast.makeText(getBaseContext(), "名字没有填写,添加失败", Toast.LENGTH_SHORT).show();
                             return;
@@ -511,8 +543,7 @@ public class ContactActivity extends AppCompatActivity {
                             Toast.makeText(getBaseContext(), "生日没有填写,添加失败", Toast.LENGTH_SHORT).show();
                             return;
                         }*/
-
-                        add_contact(name, numnber, email, birth, index);
+                        add_contact(name, numbers, email, birth);
                         }
                 })
                 .create();             // 创建AlertDialog对象
@@ -527,6 +558,215 @@ public class ContactActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    //修改联系人
+    private void change_contact(String name, ArrayList<PhoneNumber> numbers, String email, String birth){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        if (birth.equals("")) {
+            birth = "1111-1-1";
+        }
+        try {
+            date = sdf.parse(birth);
+        } catch (ParseException err) {
+        }
+        Contacts contacts;
+        contacts = new Contacts();
+        contacts.setName(name);
+        if (date != null)
+            contacts.setBirthday(date.getTime());
+        contacts.setEmail(email);
+
+        if (numbers.size() == 0){
+            PhoneNumber phoneNumber = new PhoneNumber();
+            phoneNumber.setNumber("");
+            phoneNumber.setType(PhoneNumber.PhoneType.Unknow);
+            contacts.addNumber(phoneNumber);
+        }
+        else{
+            for (int i = 0; i < numbers.size(); i++){
+                contacts.addNumber(numbers.get(i));
+            }
+        }
+
+        dbutil.addContact(contacts);
+
+        ArrayList<Contacts> allContacts = dbutil.getAllContacts();
+        list_all.clear();
+        list_show.clear();
+        map_IsHead.clear();
+        for (int i = 0; i < allContacts.size(); i++)
+        {
+            list_all.add(allContacts.get(i));
+        }
+        //按拼音排序
+        MemberSortUtil sortUtil = new MemberSortUtil();
+        Collections.sort(list_all, sortUtil);
+        // 初始化数据，顺便放入把标题放入map集合
+        for (int i = 0; i < list_all.size(); i++) {
+            Contacts cityBean = list_all.get(i);
+            if (!map_IsHead.containsKey(cityBean.getHeadChar())) {// 如果不包含就添加一个标题
+                Contacts cityBean1 = new Contacts();
+                // 设置名字
+                cityBean1.setName(cityBean.getName());
+                // 设置标题type
+                cityBean1.setType(ContactActivity.TITLE);
+                list_show.add(cityBean1);
+                // map的值为标题的下标
+                map_IsHead.put(cityBean1.getHeadChar(),list_show.size() - 1);
+            }
+            list_show.add(cityBean);
+        }
+        listView.setAdapter(adapter);
+        edit_search.setText("");
+    }
+
+    //修改联系人对话框
+    public void custom_view_change() {
+        TableLayout add_word_form = (TableLayout) getLayoutInflater()
+                .inflate(R.layout.change_contact, null);
+        dialogBuilder = new AlertDialog.Builder(this);
+        alertDialog = dialogBuilder
+                // 设置对话框标题
+                .setTitle("添加联系人")
+                // 设置对话框显示的View对象
+                .setView(add_word_form)
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(mContext, "点击了取消按钮", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        EditText name_input = (EditText)alertDialog.findViewById(R.id.name);
+                        //Toast.makeText(mContext, "点击了确定按钮", Toast.LENGTH_SHORT).show();
+
+                        EditText email_input = (EditText) alertDialog.findViewById(R.id.email);
+                        EditText birth_input = (EditText) alertDialog.findViewById(R.id.birth);
+
+                        ArrayList<EditText> ed = new ArrayList<EditText>();
+                        ArrayList<Spinner> sp = new ArrayList<Spinner>();
+                        EditText number_input_1 = (EditText)alertDialog.findViewById(R.id.number1);
+                        Spinner sp_1 = (Spinner) alertDialog.findViewById(R.id.types1);
+                        ed.add(number_input_1);
+                        sp.add(sp_1);
+                        EditText number_input_2 = (EditText)alertDialog.findViewById(R.id.number2);
+                        Spinner sp_2 = (Spinner) alertDialog.findViewById(R.id.types2);
+                        ed.add(number_input_2);
+                        sp.add(sp_2);
+                        EditText number_input_3 = (EditText)alertDialog.findViewById(R.id.number3);
+                        Spinner sp_3 = (Spinner) alertDialog.findViewById(R.id.types3);
+                        ed.add(number_input_3);
+                        sp.add(sp_3);
+
+                        ArrayList<PhoneNumber> numbers = new ArrayList<PhoneNumber>();
+                        for (int i = 0; i < 3; i++){
+                            String number = ed.get(i).getText().toString();
+                            int index = sp.get(i).getSelectedItemPosition();
+                            if (!number.equals("")){
+                                PhoneNumber phoneNumber = new PhoneNumber();
+                                phoneNumber.setNumber(number);
+                                switch (index){
+                                    case 0:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Unknow);
+                                        break;
+                                    case 1:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Home);
+                                        break;
+                                    case 2:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Mobile);
+                                        break;
+                                    case 3:
+                                        phoneNumber.setType(PhoneNumber.PhoneType.Company);
+                                        break;
+                                }
+                                numbers.add(phoneNumber);
+                            }
+                        }
+
+                        String name = name_input.getText().toString();
+                        String email = email_input.getText().toString();
+                        String birth = birth_input.getText().toString();
+
+                        if("".equals(name)){
+                            Toast.makeText(getBaseContext(), "名字没有填写,修改失败", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        /*if("".equals(email)){
+                            Toast.makeText(getBaseContext(), "邮箱没有填写,添加失败", Toast.LENGTH_SHORT).show();
+                            return;
+                        }*/
+                        /*if("".equals(birth)){
+                            Toast.makeText(getBaseContext(), "生日没有填写,添加失败", Toast.LENGTH_SHORT).show();
+                            return;
+                        }*/
+                        dbutil.DeleteContact(list_show.get(choose).get_id());
+                        change_contact(name, numbers, email, birth);
+                    }
+                })
+                .create();             // 创建AlertDialog对象
+        alertDialog.show();
+
+        EditText name_input = (EditText)alertDialog.findViewById(R.id.name);
+        EditText email_input = (EditText) alertDialog.findViewById(R.id.email);
+        EditText birth_input = (EditText) alertDialog.findViewById(R.id.birth);
+
+        ArrayList<EditText> ed = new ArrayList<EditText>();
+        ArrayList<Spinner> sp = new ArrayList<Spinner>();
+        EditText number_input_1 = (EditText)alertDialog.findViewById(R.id.number1);
+        Spinner sp_1 = (Spinner) alertDialog.findViewById(R.id.types1);
+        ed.add(number_input_1);
+        sp.add(sp_1);
+        EditText number_input_2 = (EditText)alertDialog.findViewById(R.id.number2);
+        Spinner sp_2 = (Spinner) alertDialog.findViewById(R.id.types2);
+        ed.add(number_input_2);
+        sp.add(sp_2);
+        EditText number_input_3 = (EditText)alertDialog.findViewById(R.id.number3);
+        Spinner sp_3 = (Spinner) alertDialog.findViewById(R.id.types3);
+        ed.add(number_input_3);
+        sp.add(sp_3);
+
+        Contacts cur_contact = list_show.get(choose);
+        ArrayList<PhoneNumber> cur_numbers = cur_contact.getNumbers();
+        for (int i = 0; i < 3; i++){
+            if (i < cur_numbers.size()){
+                ed.get(i).setText(cur_numbers.get(i).getNumber());
+                switch (cur_numbers.get(i).getType().getName()){
+                    case "Unknow":
+                        sp.get(i).setSelection(0, true);
+                        break;
+                    case "Home":
+                        sp.get(i).setSelection(1, true);
+                        break;
+                    case "Mobile":
+                        sp.get(i).setSelection(2, true);
+                        break;
+                    case "Company":
+                        sp.get(i).setSelection(3, true);
+                        break;
+                }
+            }
+        }
+
+
+        name_input.setText(cur_contact.getName());
+        email_input.setText(cur_contact.getEmail());
+        birth_input.setText(utils.formatDateBirth(cur_contact.getBirthday().getTime()));
+
+
+        birth_input.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    showDatePickDlg();
+                }
+            }
+        });
+
 
     }
 
@@ -583,7 +823,7 @@ public class ContactActivity extends AppCompatActivity {
                 break;
             case R.id.add_contact:
                 //Toast.makeText(this, "添加单词", Toast.LENGTH_SHORT).show();
-                customViewAdd();
+                custom_view_add();
                 break;
             default:
                 return super.onOptionsItemSelected(item);

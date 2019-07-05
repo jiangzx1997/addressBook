@@ -22,6 +22,7 @@
             android:background="@drawable/edit_bg"
             android:padding = "10dp" />
     </TableRow>
+
     <TableRow
         android:padding = "10dp">
         <TextView
