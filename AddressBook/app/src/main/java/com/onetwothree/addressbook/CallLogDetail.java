@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,6 +72,18 @@ public class CallLogDetail extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    //安卓重写返回键事件
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode==KeyEvent.KEYCODE_BACK){
+            Intent re = new Intent();
+            re.putExtra("delete", false);
+            re.putExtra("position", getIntent().getStringExtra("position"));
+            setResult(1, re);
+            finish();
+        }
+        return true;
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
